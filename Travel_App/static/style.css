@@ -1,0 +1,173 @@
+html {
+  font-size: 15px;
+  font-family: "Sans-serif", sans-serif; 
+}
+
+body {
+  width: auto;
+  margin: 0 auto;
+  background-color: #ffffff;
+
+  /*space around content to border*/
+  padding: 20px 20px;
+
+  /* distance from viewpoint to
+  border*/
+  margin: 0;
+
+  /* encapsulates border*/
+  border-top: 5px  solid rgb(255, 136, 0);
+}
+
+p {
+  color: black;
+  max-width: auto;
+  height: auto;
+  text-align: left;
+}
+
+/*selecting a specific attribute*/
+/* <!-- FIXME: should use forurl --> */
+img[src="../static/Example.jpg" ] {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: max-width 0.5s ease;
+}
+
+/*pseudo class selector*/
+img:hover {
+  max-width: 100%;
+  height: auto;
+
+
+}
+
+h1 {
+  font-size: 25px;
+  text-align: center;
+  margin: 0;
+}
+
+
+h2,
+h3 {
+  
+text-align: center;
+}
+
+li {
+  line-height: 2;
+}
+
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+
+.circle {
+  background-color: #2ecc71;
+  max-width: 300px;
+  max-height: 300px;
+
+  min-width: 200px;
+  min-height: 200px;
+
+
+  /* scaling the circle*/
+  width: 50vw; /* Width relative to the viewport width */
+  height: 50vw; /* Height relative to the viewport width to maintain aspect ratio */
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+/* style for ul inside the circle */
+.circle ul {
+  padding-right: 40px; /* Adjust the padding to indent the list items */
+  text-align: left; /* Align text to the left */
+  margin: 0;
+  list-style: disc inside; /* Display list items inside the padding */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+.circle ul li {
+  list-style-position: inside;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Keyframes for the circle animation 
+defines the animation*/
+@keyframes scaleUpDown {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+}
+
+/* Keyframes for the list 
+items fade-in animation 
+goes from 0 to 1*/
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+input[type="text"],
+textarea,
+[type ="email"] 
+{
+
+  /* fit to prevent overflow*/
+  max-width: 100%;
+  box-sizing: border-box; 
+
+  /* Font settings */
+  font-size: 15px;
+  font-family: "Roboto", roboto; 
+  
+  /* Padding and margins */
+  padding: 10px; /* Add padding inside the textarea */
+  margin: 10px 0; /* Add margin around the textarea */
+
+  /* Border and background */
+  border: 2px solid #2ecc71; /* Set border color and width */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #f9f9f9; /* Background color */
+  
+  /* Other text settings */
+  line-height: 1.5; /* Line height for better readability */
+  resize: vertical; /* box only resize vertically */
+  
+
+  ::placeholder {
+      color: #888; /* Placeholder text color */
+      font-style: italic; /* Placeholder text style */
+  }
+}
+
+/*
+#my-id
+selects <p id="my-id"> or <a id="my-id">
+*/

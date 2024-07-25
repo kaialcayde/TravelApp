@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en-US">
+
+  <!-- to link with flask -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+<head>
+    <!--make the form a little less ugly-->
+    <style>
+        body {
+        /* Center the form on the page */
+        text-align: center;
+        }
+
+        form {
+        display: inline;
+        /* display: inline-block would
+        keep the size when shrinking  */
+        padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: 1em;
+        }
+
+        ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        }
+
+        form li + li {
+        margin-top: 1em;
+        }
+
+        label {
+        /* Uniform size & alignment */
+        display: inline-block;
+        min-width: 90px;
+        text-align: right;
+        }
+
+        input,
+        textarea {
+        font: sans-serif;
+        /* Uniform text field size */
+        width: 300px;
+        box-sizing: border-box;
+        /* Match form field borders */
+
+        }
+
+        
+        input:focus,
+        textarea:focus {
+        /* Additional highlight for focused 
+        or user selected elements */
+        border-color: #000;
+        }
+
+        textarea {
+        /* Align multiline text fields with their labels */
+        vertical-align: top;
+        /* Provide space to type some text */
+        height: 5em;
+        }
+
+        .button {
+        /* Align buttons with the text fields */
+        padding-left: 90px; /* same size as the label elements */
+        }
+
+        button {
+        /* This extra margin represent roughly the same space as the space
+            between the labels and their text fields */
+        margin-left: 0.5em;
+        }
+
+    </style>
+
+
+    <meta charset="utf-8" />
+    <!--sets viewport consistency-->
+    <meta name="viewport" content="width=device-width" />
+
+    <title> Kai Alcayde</title>
+  </head>
+  <body>
+
+    <h1>Kai Alcayde</h1>
+        <h2>My Portfolio</h2>
+
+            <div class="circle">
+                <h3> About me</h3>
+                I am a mechanical engineer. My skills include:
+                <ul>
+                <li>AI</li>
+                <li>Data Science</li>
+                </ul>
+            </div>
+
+        <p>Check out my <a href="https://www.linkedin.com/in/kai-alcayde/">LinkedIn</a>
+            if you want to know more about me or look at my 
+            <a href="projects.html">Projects</a> 
+            if you are interested.
+        </p>
+
+        <p> If you want to contact me:
+            
+            <!--action is url to send to-->
+            <!--post to send data to the server-->
+            <form action="/my-handling-form-page" method="post">
+                <ul>
+                  <li>
+
+                    <!--label must match id-->
+                    <label for="name">Name:</label>
+
+                    <!--type text: single line field-->
+                    <!--id: identifies within html and css-->
+                    <!-- name=" " is used for key value 
+                    data processing in the server side-->
+                    <input type="text" id="name" name="user_name" 
+                    placeholder="Enter your name here..."/>
+                  </li>
+                  <li>
+                    <!--type mail: ensures is email-->
+                    <label for="mail">Email:</label>
+                    <input type="email" id="mail" name="user_email" 
+                    placeholder="Enter your email here..."/>
+                  </li>
+                  <li>
+                    <label for="msg">Message:</label>
+                    <textarea id="msg" name="user_message"
+                    placeholder="Enter your message here..."></textarea>
+                  </li>
+                  <ul><input type="submit" value="Submit"></ul>
+                </ul>
+              </form>
+        </p>
+
+        
+<!-- FIXME: should use forurl -->
+<!--alt can be read, shows up if image doesn't load-->
+<img src="../static/Example.jpg" alt="My test image">  
+
+
+  </body>
+</html>
